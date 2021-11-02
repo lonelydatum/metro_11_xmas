@@ -86,6 +86,7 @@ canvas {
   height: 250px;
   overflow: hidden;
   position: relative;
+  background-color: white;
   -webkit-text-size-adjust: 100%;
   opacity: 1;
   cursor: pointer;
@@ -195,12 +196,6 @@ sup {
   transform-style: preserve-3d;
 }
 
-.flip-card-container:hover .flip-card {
-  -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  /* <=>  rotateY(.5turn) */
-}
-
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
   position: absolute;
@@ -222,7 +217,7 @@ sup {
 }
 
 #shadow {
-  opacity: .4;
+  opacity: .52;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -9,8 +9,11 @@ const {w, h} = size
 
 
 
-
-// TweenLite.set(["#front", "#back"], {x:size.w/2, y:size.h/2})
+const transformOrigin_x = size.w
+const transformOrigin_y = 342*2
+console.log(transformOrigin_x, transformOrigin_y);
+TweenLite.set("#cta", {transformOrigin:`${transformOrigin_x}px ${transformOrigin_y}px`})
+TweenLite.set("#cta", {x:-transformOrigin_x/2, y:-transformOrigin_y/2})
 
 
  
@@ -21,7 +24,19 @@ const {w, h} = size
 
 function init(){
 	
-	const tl = new TimelineMax()
+	const tl = new TimelineMax({onComplete(){
+		console.log('sldkfjsldfj');
+		banner.addEventListener("mouseover", ()=>{
+			const tl = new TimelineMax()
+			tl.to("#cta", .3, {scale:.62, ease:Back.easeIn})
+			tl.to("#cta", .3, {scale:.5, ease:Back.easeOut})
+		})
+
+		banner.addEventListener("mouseout", ()=>{
+
+			TweenLite.to("#cta", .3, {scale:.5, ease:Back.easeOut})
+		})
+	}})
 
 	
 
@@ -35,6 +50,7 @@ function init(){
 
 	return tl
 }
+
 
 
 

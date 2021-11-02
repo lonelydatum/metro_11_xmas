@@ -12,11 +12,27 @@ TweenLite.defaultEase = Power3.easeOut;
 var w = size.w;
 var h = size.h;
 
-// TweenLite.set(["#front", "#back"], {x:size.w/2, y:size.h/2})
+var transformOrigin_x = size.w;
+var transformOrigin_y = 342 * 2;
+console.log(transformOrigin_x, transformOrigin_y);
+TweenLite.set("#cta", { transformOrigin: transformOrigin_x + "px " + transformOrigin_y + "px" });
+TweenLite.set("#cta", { x: -transformOrigin_x / 2, y: -transformOrigin_y / 2 });
 
 function init() {
 
-	var tl = new TimelineMax();
+	var tl = new TimelineMax({ onComplete: function onComplete() {
+			console.log('sldkfjsldfj');
+			banner.addEventListener("mouseover", function () {
+				var tl = new TimelineMax();
+				tl.to("#cta", .3, { scale: .62, ease: Back.easeIn });
+				tl.to("#cta", .3, { scale: .5, ease: Back.easeOut });
+			});
+
+			banner.addEventListener("mouseout", function () {
+
+				TweenLite.to("#cta", .3, { scale: .5, ease: Back.easeOut });
+			});
+		} });
 
 	tl.set(".frame1", { opacity: 1 });
 

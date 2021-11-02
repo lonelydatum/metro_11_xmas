@@ -25,7 +25,7 @@
   transform-style: preserve-3d;
 }
 .flip-card-container:hover .flip-card {
-  transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
+  // transform: rotateY(180deg); /* <=>  rotateY(.5turn) */
 }
 /* Position the front and back side */
 .flip-card-front, .flip-card-back {
@@ -52,5 +52,6 @@
 }
 
 #shadow{
-	opacity: .4;
+	opacity: .52;
 }
+
