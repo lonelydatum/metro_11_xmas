@@ -62,8 +62,8 @@ function init(){
 	
 
 	
-	tl.to(".dish_a", .6, {rotation:"+=180", ease:Power3.easeOut}, "start+=.6")
-	tl.from(".dish_b", .6, {rotation:"-=180", ease:Power3.easeOut}, "start+=.6")
+	tl.to(".dish_a", .6, {rotation:"+=180", ease:Power3.easeOut}, "start")
+	tl.from(".dish_b", .6, {rotation:"-=180", ease:Power3.easeOut}, "start")
 
 	
 

@@ -96,8 +96,8 @@ function init() {
 
 	tl.to("#text .flip-card", .6, { transform: 'rotateY(180deg)', ease: Power3.easeOut }, "start");
 
-	tl.to(".dish_a", .6, { rotation: "+=180", ease: Power3.easeOut }, "start+=.6");
-	tl.from(".dish_b", .6, { rotation: "-=180", ease: Power3.easeOut }, "start+=.6");
+	tl.to(".dish_a", .6, { rotation: "+=180", ease: Power3.easeOut }, "start");
+	tl.from(".dish_b", .6, { rotation: "-=180", ease: Power3.easeOut }, "start");
 
 	tl.from(".cta", .5, { opacity: 0, ease: Power2.easeOut }, "+=.3");
 
