@@ -23,17 +23,17 @@ TweenLite.set("#cta", { x: -transformOrigin_x / 2, y: -transformOrigin_y / 2 });
 function init() {
 
 	var tl = new TimelineMax({ onComplete: function onComplete() {
-			console.log('sldkfjsldfj');
-			banner.addEventListener("mouseover", function () {
-				var tl = new TimelineMax();
-				tl.to("#cta", .3, { scale: .62, ease: Back.easeIn });
-				tl.to("#cta", .3, { scale: .5, ease: Back.easeOut });
-			});
+			// console.log('sldkfjsldfj');
+			// banner.addEventListener("mouseover", ()=>{
+			// 	const tl = new TimelineMax()
+			// 	tl.to("#cta", .3, {scale:.62, ease:Back.easeIn})
+			// 	tl.to("#cta", .3, {scale:.5, ease:Back.easeOut})
+			// })
 
-			banner.addEventListener("mouseout", function () {
+			// banner.addEventListener("mouseout", ()=>{
 
-				TweenLite.to("#cta", .3, { scale: .5, ease: Back.easeOut });
-			});
+			// 	TweenLite.to("#cta", .3, {scale:.5, ease:Back.easeOut})
+			// })
 		} });
 
 	tl.set(".frame1", { opacity: 1 });
@@ -41,6 +41,14 @@ function init() {
 	tl.to("#hero .flip-card", 1, { transform: "rotateY(180deg)", ease: Power2.easeOut }, READ);
 
 	tl.to("#shadow .flip-card", 1, { transform: "rotateY(180deg)", ease: Power2.easeOut }, READ + .1);
+
+	var r = 3;
+	for (var i = 0; i < 5; i++) {
+		var rotation = i % 2 === 0 ? r : -r;
+		tl.to("#cta", .06, { rotation: rotation, ease: Power1.easeOut });
+	}
+
+	tl.to("#cta", .3, { rotation: 0, ease: Power3.easeOut });
 
 	return tl;
 }

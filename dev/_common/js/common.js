@@ -27,17 +27,17 @@ TweenLite.set("#cta", {x:-transformOrigin_x/2, y:-transformOrigin_y/2})
 function init(){
 	
 	const tl = new TimelineMax({onComplete(){
-		console.log('sldkfjsldfj');
-		banner.addEventListener("mouseover", ()=>{
-			const tl = new TimelineMax()
-			tl.to("#cta", .3, {scale:.62, ease:Back.easeIn})
-			tl.to("#cta", .3, {scale:.5, ease:Back.easeOut})
-		})
+		// console.log('sldkfjsldfj');
+		// banner.addEventListener("mouseover", ()=>{
+		// 	const tl = new TimelineMax()
+		// 	tl.to("#cta", .3, {scale:.62, ease:Back.easeIn})
+		// 	tl.to("#cta", .3, {scale:.5, ease:Back.easeOut})
+		// })
 
-		banner.addEventListener("mouseout", ()=>{
+		// banner.addEventListener("mouseout", ()=>{
 
-			TweenLite.to("#cta", .3, {scale:.5, ease:Back.easeOut})
-		})
+		// 	TweenLite.to("#cta", .3, {scale:.5, ease:Back.easeOut})
+		// })
 	}})
 
 	
@@ -48,6 +48,17 @@ function init(){
 
 	tl.to("#shadow .flip-card", 1, {transform: `rotateY(180deg)`, ease:Power2.easeOut}, READ+.1)
 
+
+	
+	const r = 3
+	for(let i=0; i<5; i++){		
+		const rotation = i%2===0 ? r : -r
+		tl.to("#cta", .06, {rotation, ease:Power1.easeOut})	
+	}
+
+	tl.to("#cta", .3, {rotation:0, ease:Power3.easeOut})	
+	
+	
 	
 
 	return tl
