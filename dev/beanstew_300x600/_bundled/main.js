@@ -12,7 +12,7 @@ TweenLite.defaultEase = Power3.easeOut;
 var w = size.w;
 var h = size.h;
 
-function init() {
+function init(pos) {
 
 	var transformOrigin_x = size.w;
 	var transformOrigin_y = 0;
@@ -22,6 +22,11 @@ function init() {
 		transformOrigin_y = 342 * 2;
 	} else if (size.h === 250) {
 		transformOrigin_y = 175 * 2;
+	}
+
+	if (pos) {
+		transformOrigin_x = pos.x;
+		transformOrigin_y = pos.y;
 	}
 
 	console.log(transformOrigin_x, transformOrigin_y);

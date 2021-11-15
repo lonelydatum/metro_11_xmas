@@ -18,18 +18,24 @@ const {w, h} = size
 
 
 
-function init(){
+function init(pos){
 
 	
 
-	const transformOrigin_x = size.w
+	let transformOrigin_x = size.w
 	let transformOrigin_y = 0
 	const READ = 3
+
 
 	if(size.h===600){
 		transformOrigin_y = 342*2
 	}else if(size.h===250){
 		transformOrigin_y = 175*2
+	}
+
+	if(pos){
+		transformOrigin_x = pos.x
+		transformOrigin_y = pos.y
 	}
 
 	console.log(transformOrigin_x, transformOrigin_y);
